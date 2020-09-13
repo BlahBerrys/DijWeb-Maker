@@ -37,15 +37,12 @@ public class Web {
         double h = controller.img.getImage().getHeight();
         double w = controller.img.getImage().getWidth();
 
-        // Offsets for osrs map
-        int startX = 1152, startY = 2496;
+        // Grid offsets
+        int startX = controller.offXSpinner.getValue(), startY = controller.offYSpinner.getValue();
 
         // Grid
-        int columns = 2750;
-        int rows = 1600;
-
-        double columnW = w / columns;
-        double rowW = h / rows;
+        double columnW = w / controller.columnSpinner.getValue();
+        double rowW = h / controller.rowSpinner.getValue();
 
         // Export Nodes to flat-file
         ArrayList<Node> nodes = new ArrayList<>();

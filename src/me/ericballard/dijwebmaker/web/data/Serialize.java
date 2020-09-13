@@ -14,6 +14,8 @@ public class Serialize {
 
     public static class Graph {
 
+        public int rows, columns, offX, offY;
+
         // Serialized circle aka "scene node"
         public ArrayList<String> sceneNodes;
 
@@ -30,10 +32,9 @@ public class Serialize {
     // line:width,sx,sy,ex,ey
     // circle:radius,strokeWidth,x,y
     public static String shapeToString(Shape shape) {
-        boolean circle = (shape instanceof Circle);
         StringBuilder sb = new StringBuilder();
 
-        if (circle) {
+        if (shape instanceof Circle) {
             Circle c = (Circle) shape;
             sb.append("circle:");
             sb.append(c.getRadius()).append(",");

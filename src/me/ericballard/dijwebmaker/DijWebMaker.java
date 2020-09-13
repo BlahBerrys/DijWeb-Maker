@@ -49,7 +49,7 @@ public class DijWebMaker extends Application {
 
         // Set icon and titile
         stage.getIcons().add(new Image(getClass().getResourceAsStream("gui/resources/icon.png")));
-        stage.setTitle("DijWebMaker | v1.0");
+        stage.setTitle("DijWebMaker | v1.1");
 
         // Configure window functionality
         stage.setScene(new Scene(root, 1200, 800));

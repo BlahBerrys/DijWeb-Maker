@@ -7,6 +7,13 @@
     -fx-background-radius: 5,4,3,5;
     -fx-background-insets: 0,1,2,0;
 }
+.spinner {
+    -fx-control-inner-background: #505050;
+    -fx-base: #757575
+}
+.spinner .decrement-arrow, .increment-arrow {
+   -fx-background-color: #505050;
+}
 .scroll-bar:horizontal .track,
 .scroll-bar:vertical .track{
     -fx-background-color :transparent;

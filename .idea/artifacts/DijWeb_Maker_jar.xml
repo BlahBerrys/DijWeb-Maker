@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="DijWeb-Maker:jar">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="DijWeb-Maker.jar">
+      <element id="module-output" name="DijWeb-Maker" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Libraries/gson-2.8.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

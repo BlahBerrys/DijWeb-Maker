@@ -2,6 +2,7 @@ package me.ericballard.dijwebmaker.gui.handlers.node;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -30,6 +31,7 @@ public class NodeHandler {
     public static ArrayList<Shape> sceneNodes = new ArrayList<>();
 
     public static Shape getClosestTo(Point2D pos, double threshold, boolean ignoreSelf) {
+        threshold = (threshold < 15 ? 15 : threshold);
         HashMap<Shape, Double> acceptableNodes = new HashMap<>();
 
         // Find nodes near click
@@ -105,18 +107,20 @@ public class NodeHandler {
             X = e.getX();
             Y = e.getY();
 
-            double h = controller.img.getImage().getHeight();
-            double w = controller.img.getImage().getWidth();
+            Image i = controller.img.getImage();
 
-            // Offsets for osrs map
-            int startX = 1152, startY = 2496;
+            if (i == null)
+                return;
+
+            double h = i.getHeight();
+            double w = i.getWidth();
+
+            // Grid offsets
+            int startX = controller.offXSpinner.getValue(), startY = controller.offYSpinner.getValue();
 
             // Grid
-            int columns = 2750;
-            int rows = 1600;
-
-            double columnW = w / columns;
-            double rowW = h / rows;
+            double columnW = w / controller.columnSpinner.getValue();
+            double rowW = h / controller.rowSpinner.getValue();
 
             // Define column/row based on mouse position divided by possible rows/columns
             int column = startX + (int) (X / columnW);
@@ -127,7 +131,6 @@ public class NodeHandler {
             controller.yTxt.setText("Y: " + row);
         };
     }
-
 
     public static EventHandler<? super MouseEvent> click(Controller controller) {
         return e -> {
@@ -145,8 +148,7 @@ public class NodeHandler {
             // Determine tile margins base on image size
             double w = controller.img.getImage().getWidth();
 
-            int columns = 2750;
-            double columnW = w / columns;
+            double columnW = w / controller.columnSpinner.getValue();
             double threshold = columnW * 5;
 
             // Find nearest node near click
@@ -234,8 +236,11 @@ public class NodeHandler {
     static final Stop[] hStops = new Stop[]{new Stop(0, Color.BLACK), new Stop(0.1, Color.WHITE), new Stop(0.5, Color.BLACK), new Stop(0.9, Color.WHITE), new Stop(1, Color.BLACK)};
     static final LinearGradient hlg = new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, hStops);
 
-    public static Circle create(double raidus, double strokeWidth, double x, double y) {
-        Circle c = new Circle(raidus);
+    public static Circle create(double radius, double strokeWidth, double x, double y) {
+        radius = (radius < 6 ? 6 : radius);
+        strokeWidth = (strokeWidth < 3 ? 3 : strokeWidth);
+
+        Circle c = new Circle(radius);
         c.setFill(Color.BLACK);
         c.setTranslateX(x);
         c.setTranslateY(y);
