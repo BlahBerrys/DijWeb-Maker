@@ -28,7 +28,7 @@ _Use DijWeb-Maker to create a web for your favorite game - or expand the horizon
 
 **Examples**
 * RuneScape
-* ![osrs](https://media.giphy.com/media/hQjKGme0HPwAxyviYJ/giphy.gif)
+![](osrs.gif)
 
 * Indianapolis
-* ![indy](https://media.giphy.com/media/QvekgYiLe3Uk0gIL6e/giphy.gif)
+![](indy.gif)
