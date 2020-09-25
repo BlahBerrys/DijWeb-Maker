@@ -4,7 +4,7 @@ _JavaFX application assisting to visually construct a web-node system, additiona
 ### Features ###
 - Fully dynamic sizing, responsive to window size and defined background-image
 - Easily paint an accurate web-node system with intuitive controls
-- Visually simulate traveral between dynamically defined points 
+- Visually simulate traversal between dynamically defined points 
 - Automatically saves and re-loads user-defined configuration
 
 ### Configurability ###
