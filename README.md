@@ -20,7 +20,7 @@ _JavaFX application assisting to visually construct a web-node system, additiona
   * Additionally, If no paths are near the mouse when left clicked, the web may be panned in any direction provided the defined background-image is large enough.
   
 * **(Right Click)**
-  * Right clicking near an existing node or path will delete it's existance, if none are near a new node will be created - should another node be near the newly created node, a path will be attached to path.
+  * Right clicking near an existing node or path will delete it's existance, if no existing nodes are near the position of the mouse during a right click: a new node will be created - should another node be near the newly created node, a path will be attached between the two.
   
 
 ### Use Cases ###
